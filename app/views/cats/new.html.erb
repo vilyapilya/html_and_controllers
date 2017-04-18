@@ -1,0 +1,38 @@
+<h2> A New Cat </h2>
+
+<form action="<%= cats_url %>" method="post">
+  <label> Name </label>
+  <input id="name" type="text" name="cat[name]"> </input>
+
+  <br><br>
+
+  <label> Sex </label>
+  <input id="sex" type="radio" name="cat[sex]" value = "M">
+  M
+  <input id="sex" type="radio" name ="cat[sex]" value = "F">
+  F <br>
+
+
+  <br>
+
+  <label> Color </label>
+  <select id="color" name="cat[color]">
+    <option selected="disabled" > --Please pick a color--</option>
+    <% @cat.all_color.each do |color| %>
+     <option value="<%=color%>"> <%= color %> </option>
+    <%end%>
+  </select>
+
+  <br>
+  <label> Pick a b-day </label>
+  <input name="cat[birth_date]" type="date">
+
+  <br>
+
+  <label> Description </label>
+  <textarea name="cat[description]" id="cat_description"> </textarea>
+
+  <br><br>
+
+  <input type="submit" value="<%= 'add cat' %>">
+</form>
